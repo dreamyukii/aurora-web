@@ -123,7 +123,7 @@ export default function AboutDocs() {
                 Visit Forums <PersonStanding size={24} />
               </a>
               <a
-                href={"https://discord.gg/WEu6BdFEtp"}
+                href={"https://discord.gg/HU3BvDRcRe"}
                 target={"_blank"}
                 rel={"noreferrer"}
                 className={

@@ -1,8 +1,30 @@
 "use client";
 
-import useSWR from "swr";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
+import { ArrowRight } from "lucide-react";
+import { ContributorBadge } from "@/components/ContributorCard";
+import contributorsCache from "@/data/contributors-cache.json";
+
+type GitHubContributor = {
+  login: string;
+  id: number;
+  avatar_url: string;
+  html_url: string;
+  contributions: number;
+};
+
+// Use cached repo contributors from build time
+const repoContributors = contributorsCache.repoContributors as GitHubContributor[];
+
+// Filter out bots
+const filteredContributors = repoContributors.filter(
+  (c) => !c.login.includes("[bot]")
+);
 
 export default function Contributors() {
+  const t = useTranslations("Contributors");
+
   return (
     <div>
       <div
@@ -15,140 +37,37 @@ export default function Contributors() {
             "bg-gradient-to-r from-aurora-blue to-aurora-lightorange bg-clip-text py-2 text-4xl font-bold text-transparent lg:text-7xl"
           }
         >
-          For the community, by the community.
+          {t("title")}
         </h1>
         <div className={"text-xl"}>
-          Aurora is built and maintained by the community, for the community. We
-          are passionate in what we do.
+          {t("subtitle")}
         </div>
-        <ContributorsGrid />
+        <div
+          className={
+            "flex h-fit w-full max-w-screen-2xl flex-wrap justify-center gap-4"
+          }
+        >
+          {filteredContributors.length > 0 ? (
+            filteredContributors.slice(0, 12).map((contributor) => (
+              <ContributorBadge
+                key={contributor.id}
+                img={contributor.avatar_url}
+                profileUrl={contributor.html_url}
+                name={contributor.login}
+              />
+            ))
+          ) : (
+            <p className="text-zinc-400">{t("error")}</p>
+          )}
+        </div>
+        <Link
+          href="/contributors"
+          className="group mt-4 flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900/50 px-6 py-3 text-sm font-medium text-zinc-300 transition-all hover:border-aurora-blue hover:bg-zinc-800 hover:text-white"
+        >
+          {t("view-all")}
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </Link>
       </div>
     </div>
   );
 }
-
-function ContributorsGrid() {
-  const { data } = useSWR("/api/contributors", getContributors);
-
-  if (!data?.contributors) {
-    return (
-      <div
-        className={
-          "flex h-fit w-full max-w-screen-2xl flex-wrap justify-center gap-4"
-        }
-      >
-        Contributors could not be loaded. Please try again later.
-      </div>
-    );
-  }
-  if (data) {
-    return (
-      <div
-        className={
-          "flex h-fit w-full max-w-screen-2xl flex-wrap justify-center gap-4"
-        }
-      >
-        {filterBotContributors(data.contributors!).map(
-          (contributor: GitHubContributor) => (
-            <ContributorBadge
-              key={contributor.id}
-              img={contributor.avatar_url}
-              profileUrl={contributor.html_url}
-              name={contributor.login}
-            />
-          ),
-        )}
-      </div>
-    );
-  } else {
-    return (
-      <div
-        className={
-          "flex h-fit w-full max-w-screen-2xl flex-wrap justify-center gap-4"
-        }
-      >
-        Contributors could not be loaded.
-      </div>
-    );
-  }
-}
-
-const filterBotContributors = (
-  contributors: GitHubContributor[],
-): GitHubContributor[] => {
-  return contributors.filter(
-    (contributor) => !contributor.login.includes("[bot]"),
-  );
-};
-
-function ContributorBadge({
-  img,
-  profileUrl,
-  name,
-}: {
-  img: string;
-  profileUrl: string;
-  name: string;
-}) {
-  return (
-    <a
-      href={profileUrl}
-      className={
-        "flex h-fit w-fit flex-row items-center justify-center gap-5 rounded-full bg-gradient-to-r from-aurora-blue to-aurora-darkblue p-2 px-2 transition-all duration-300 hover:scale-110 lg:px-4"
-      }
-    >
-      <img
-        width={55}
-        height={55}
-        src={img}
-        alt={name}
-        className={"rounded-full"}
-      />
-      <span className={"text-white"}>{name}</span>
-    </a>
-  );
-}
-
-async function getContributors() {
-  const response = await fetch(
-    "https://api.github.com/repos/ublue-os/aurora/contributors",
-  );
-
-  if (!response.ok) {
-    return {
-      contributors: undefined,
-      error: {
-        message: response.statusText,
-      },
-    };
-  }
-
-  const contributors = await response.json();
-  return {
-    contributors,
-    error: undefined,
-  };
-}
-
-type GitHubContributor = {
-  login: string;
-  id: number;
-  node_id: string;
-  avatar_url: string;
-  gravatar_id: string;
-  url: string;
-  html_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  starred_url: string;
-  subscriptions_url: string;
-  organizations_url: string;
-  repos_url: string;
-  events_url: string;
-  received_events_url: string;
-  type: string;
-  user_view_type: string;
-  site_admin: boolean;
-  contributions: number;
-};

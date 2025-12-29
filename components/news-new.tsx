@@ -1,5 +1,5 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import React from "react";
 import useSWR from "swr";
 import { parseFeed } from "@rowanmanning/feed-parser";
@@ -10,7 +10,8 @@ export default function NewsFromBlog({
 }: {
   newsRef: React.RefObject<HTMLDivElement>;
 }) {
-  const t = useTranslations("Navbar");
+  const t = useTranslations("News");
+  const locale = useLocale();
   const news = useSWR("blogposts", async () => {
     const res = await fetch("https://docs.getaurora.dev/blog/rss.xml");
     if (!res.ok) throw new Error("Failed to fetch");
@@ -25,9 +26,9 @@ export default function NewsFromBlog({
             "bg-gradient-to-r from-aurora-blue to-aurora-lightorange bg-clip-text text-4xl font-bold text-transparent lg:text-7xl"
           }
         >
-          {t("news")}
+          {t("title")}
         </h1>
-        <div className={"text-red-400"}>Failed to load blog posts</div>
+        <div className={"text-red-400"}>{t("failed-to-load")}</div>
       </div>
     );
   }
@@ -40,10 +41,10 @@ export default function NewsFromBlog({
             "bg-gradient-to-r from-aurora-blue to-aurora-lightorange bg-clip-text text-4xl font-bold text-transparent lg:text-7xl"
           }
         >
-          Latest from the Blog
+          {t("latest-from-blog")}
         </h1>
         <div className={"animate-pulse text-gray-400"}>
-          Loading blog posts...
+          {t("loading")}
         </div>
       </div>
     );
@@ -63,7 +64,7 @@ export default function NewsFromBlog({
             "bg-gradient-to-r from-aurora-blue to-aurora-lightorange bg-clip-text text-4xl font-bold text-transparent lg:text-7xl"
           }
         >
-          {t("news")}{" "}
+          {t("title")}{" "}
         </h1>
       </div>
 
@@ -71,7 +72,7 @@ export default function NewsFromBlog({
         {recentPosts.length > 0 ? (
           recentPosts.map((post, index) => {
             const publishedDate = post.published
-              ? new Date(post.published).toLocaleDateString("en-US", {
+              ? new Date(post.published).toLocaleDateString(locale === "de" ? "de-DE" : "en-US", {
                   year: "numeric",
                   month: "short",
                   day: "numeric",
@@ -124,7 +125,7 @@ export default function NewsFromBlog({
           })
         ) : (
           <div className="p-6 text-center text-gray-400">
-            No blog posts available
+            {t("no-posts")}
           </div>
         )}
       </div>
@@ -137,7 +138,7 @@ export default function NewsFromBlog({
           rel="noopener noreferrer"
           className="group flex items-center justify-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/30 px-6 py-3 text-sm font-medium text-gray-300 backdrop-blur-sm transition-all duration-200 hover:border-aurora-blue hover:bg-zinc-800/50 hover:text-aurora-blue"
         >
-          <span>View all blog posts</span>
+          <span>{t("view-all")}</span>
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </a>
       )}

@@ -1,0 +1,118 @@
+{
+  "contributors": [
+    {
+      "github": "inffy",
+      "role": "maintainer",
+      "sponsorLink": "https://github.com/sponsors/inffy"
+    },
+    {
+      "github": "NiHaiden",
+      "role": "maintainer",
+      "title": "Taming the website and other random stuff"
+    },
+    {
+      "github": "hanthor",
+      "role": "maintainer",
+      "title": "LTS Specialist and shameless AI enjoyer",
+      "sponsorLink": "https://github.com/sponsors/hanthor"
+    },
+    {
+      "github": "renner0e",
+      "role": "maintainer"
+    },
+    {
+      "github": "tulilirockz",
+      "role": "maintainer",
+      "sponsorLink": "https://github.com/sponsors/tulilirockz"
+    },
+    {
+      "github": "daegalus",
+      "role": "maintainer",
+      "sponsorLink": "https://github.com/sponsors/daegalus"
+    },
+    {
+      "github": "chandeleer1698",
+      "role": "artist",
+      "title": "Art Director and Telescope Connoisseur",
+      "sponsorLink": "https://ko-fi.com/chandeleer"
+    },
+    {
+      "github": "delphicmelody",
+      "role": "artist",
+      "sponsorLink": "https://ko-fi.com/melodyofdelphi"
+    },
+    {
+      "github": "kolunmi",
+      "role": "special-guest",
+      "title": "Made the best App store experience ever (Bazaar)",
+      "sponsorLink": "https://ko-fi.com/kolunmi"
+    },
+    {
+      "github": "madonuko",
+      "role": "special-guest",
+      "title": "Readymade installation experience (Fyra Labs)",
+      "sponsorLink": "https://github.com/sponsors/madonuko"
+    },
+    {
+      "github": "dreamyukii",
+      "role": "ublue"
+    },
+    {
+      "github": "HikariKnight",
+      "role": "ublue",
+      "sponsorLink": "https://github.com/sponsors/HikariKnight"
+    },
+    {
+      "github": "KyleGospo",
+      "role": "ublue",
+      "sponsorLink": "https://github.com/sponsors/KyleGospo"
+    },
+    {
+      "github": "ledif",
+      "role": "maintainer"
+    },
+    {
+      "github": "noelmiller",
+      "role": "ublue",
+      "sponsorLink": "https://github.com/sponsors/noelmiller"
+    }
+  ],
+  "roles": {
+    "maintainer": {
+      "en": "Maintainer",
+      "de": "Maintainer"
+    },
+    "artist": {
+      "en": "Artist",
+      "de": "Künstler"
+    },
+    "emeritus": {
+      "en": "Maintainer Emeritus",
+      "de": "Ehemaliger Maintainer"
+    },
+    "special-guest": {
+      "en": "Special Guest",
+      "de": "Ehrengast"
+    },
+    "advisor": {
+      "en": "Advisor & Mentor",
+      "de": "Berater & Mentor"
+    },
+    "ublue": {
+      "en": "Universal Blue",
+      "de": "Universal Blue"
+    },
+    "contributor": {
+      "en": "Contributor",
+      "de": "Mitwirkender"
+    },
+    "designer": {
+      "en": "Designer",
+      "de": "Designer"
+    },
+    "translator": {
+      "en": "Translator",
+      "de": "Übersetzer"
+    }
+  }
+}

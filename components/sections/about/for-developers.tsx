@@ -1,7 +1,12 @@
+"use client";
+
 import SpotlightCard from "@/components/SpotlightCard";
 import { BrainCircuit, CodeIcon, ContainerIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function ForDevelopers() {
+  const t = useTranslations("For-Developers");
+
   return (
     <div
       className={
@@ -13,12 +18,10 @@ export default function ForDevelopers() {
           "bg-gradient-to-r from-aurora-blue to-aurora-lightorange bg-clip-text text-4xl font-bold text-transparent lg:text-7xl py-2"
         }
       >
-        Aurora for developers
+        {t("title")}
       </h1>
       <p className={"text-xl text-center max-w-4xl"}>
-        Building on a great foundation, Aurora Developer Experience (DX) is
-        designed to make the lives of every developer easy by bundling commonly
-        used tools and applications into one package.
+        {t("subtitle")}
       </p>
       <div className={"grid grid-cols-1 gap-8 lg:grid-cols-2 w-full"}>
         <SpotlightCard
@@ -35,20 +38,18 @@ export default function ForDevelopers() {
                   "bg-gradient-to-r from-aurora-blue to-aurora-orangina bg-clip-text text-3xl font-semibold text-transparent"
                 }
               >
-                Local AI Workflows
+                {t("local-ai")}
               </h2>
               <div className={"text-xl leading-relaxed"}>
                 <p className={"mb-4"}>
-                  By including GPU drivers and commonly used utilities for local
-                  AI, Aurora makes it easy for you to get started with running
-                  your own AI at home.
+                  {t("local-ai-text")}
                 </p>
                 <p
                   className={
                     "bg-gradient-to-r from-aurora-blue to-aurora-orangina bg-clip-text text-2xl font-semibold text-transparent"
                   }
                 >
-                  The robots are here to serve you.
+                  {t("local-ai-highlight")}
                 </p>
               </div>
             </div>
@@ -69,20 +70,18 @@ export default function ForDevelopers() {
                   "bg-gradient-to-r from-aurora-lightorange to-aurora-orangina bg-clip-text text-3xl font-semibold text-transparent"
                 }
               >
-                Preinstalled container tools.
+                {t("containers")}
               </h2>
               <div className={"text-xl leading-relaxed"}>
                 <p className={"mb-4"}>
-                  Aurora Developer Experience includes Docker and Podman, offering
-                  choice and flexibility for the most demanding container-based
-                  workflows.
+                  {t("containers-text")}
                 </p>
                 <p
                   className={
                     "bg-gradient-to-r from-aurora-lightorange to-aurora-orangina bg-clip-text text-2xl font-semibold text-transparent"
                   }
                 >
-                  Cloud-Native has never been easier.
+                  {t("containers-highlight")}
                 </p>
               </div>
             </div>
@@ -103,20 +102,18 @@ export default function ForDevelopers() {
                   "bg-gradient-to-r from-ublue-lightblue to-aurora-blue bg-clip-text text-3xl font-semibold text-transparent"
                 }
               >
-                Developer tools are a click away.
+                {t("dev-tools")}
               </h2>
               <div className={"text-xl leading-relaxed"}>
                 <p className={"mb-4"}>
-                  The developer experience includes commonly used developer tools
-                  like VS Code and comes preconfigured for containerized
-                  development workflows with DevContainers. Jetbrains Products are only a command away.
+                  {t("dev-tools-text")}
                 </p>
                 <p
                   className={
                     "bg-gradient-to-r from-ublue-lightblue to-aurora-blue bg-clip-text text-2xl font-semibold text-transparent"
                   }
                 >
-                  Everything you need, out of the box.
+                  {t("dev-tools-highlight")}
                 </p>
               </div>
             </div>
@@ -144,21 +141,18 @@ export default function ForDevelopers() {
                   "bg-gradient-to-r from-aurora-lightred to-aurora-orangina bg-clip-text text-3xl font-semibold text-transparent"
                 }
               >
-                Homebrew on-tap
+                {t("homebrew")}
               </h2>
               <div className={"text-xl leading-relaxed"}>
                 <p className={"mb-4"}>
-                  Aurora automatically includes Homebrew with every installation,
-                  making it easy to discover, install and keep your favorite CLI
-                  tools up to date. Find thousands of libraries and tools in the
-                  brew libraries, safely integrated to never mess with your host system.
+                  {t("homebrew-text")}
                 </p>
                 <p
                   className={
                     "bg-gradient-to-r from-aurora-lightred to-aurora-orangina bg-clip-text text-2xl font-semibold text-transparent"
                   }
                 >
-                  Dev tooling has never been more convenient.
+                  {t("homebrew-highlight")}
                 </p>
               </div>
             </div>

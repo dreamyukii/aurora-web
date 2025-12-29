@@ -1,9 +1,14 @@
+"use client";
+
 import { GlowEffect } from "@/components/ui/glow";
 import SpotlightCard from "@/components/SpotlightCard";
 import KDELogo from "@/components/icons/kde";
 import { Trees } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function YourNewDesktop() {
+  const t = useTranslations("Your-New-Desktop");
+
   return (
     <div className="relative flex flex-col items-center justify-center gap-10">
       <div
@@ -43,12 +48,10 @@ export default function YourNewDesktop() {
               "bg-gradient-to-br from-aurora-blue to-aurora-orangina bg-clip-text text-4xl font-bold text-transparent lg:text-7xl py-2"
             }
           >
-            Welcome, it's your new desktop.
+            {t("title")}
           </h1>
           <p className="w-full text-xl lg:text-2xl mt-6 max-w-4xl mx-auto">
-            Power on and feel right at home when using your computer, from the
-            first moment on. Develop faster than ever before. Explore the galaxy. Write your next
-            novel.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -67,22 +70,20 @@ export default function YourNewDesktop() {
                     "bg-gradient-to-r from-aurora-darkblue to-ublue-lightblue bg-clip-text text-3xl font-semibold text-transparent"
                   }
                 >
-                  Built with KDE Plasma.
+                  {t("kde-title")}
                 </h2>
               </div>
 
               <div className={"text-xl leading-relaxed flex-1"}>
                 <p className={"mb-4"}>
-                  Aurora is built around the customizable and adaptable KDE
-                  Plasma Desktop Environment, carefully customized by us to provide
-                  the best experience out of the box.
+                  {t("kde-text")}
                 </p>
                 <p
                   className={
                     "bg-gradient-to-r from-aurora-darkblue to-ublue-lightblue bg-clip-text text-2xl font-semibold text-transparent"
                   }
                 >
-                  Feel right at home from day one.
+                  {t("kde-highlight")}
                 </p>
               </div>
             </div>
@@ -102,22 +103,20 @@ export default function YourNewDesktop() {
                     "bg-gradient-to-r from-aurora-lightorange to-aurora-orangina bg-clip-text text-3xl font-semibold text-transparent"
                   }
                 >
-                  Sensible defaults
+                  {t("defaults-title")}
                 </h2>
               </div>
 
               <div className={"text-xl leading-relaxed flex-1"}>
                 <p className={"mb-4"}>
-                  With a set of carefully selected applications and chosen
-                  defaults, Aurora is built for daily usage and is easy, fun and
-                  productive. It takes care of you and works alongside you.
+                  {t("defaults-text")}
                 </p>
                 <p
                   className={
                     "bg-gradient-to-r from-aurora-lightorange to-aurora-orangina bg-clip-text text-2xl font-semibold text-transparent"
                   }
                 >
-                  Everything configured, nothing to worry about.
+                  {t("defaults-highlight")}
                 </p>
               </div>
             </div>

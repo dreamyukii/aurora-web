@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { RefObject } from "react";
 import { useTranslations } from "next-intl";
@@ -22,7 +24,7 @@ export default function Hero({
       className="relative flex h-screen flex-col items-center justify-center gap-4 overflow-hidden text-wrap bg-gray-950 text-white backdrop-blur-xl animate-ease-linear"
     >
       <ShootingStars minDelay={3200} />
-      <StarsBackground starDensity={0.0005} />
+      <StarsBackground starDensity={0.00003} />
       <div className="z-10 flex max-w-screen-2xl flex-col items-center justify-center gap-5 lg:m-0">
         <div className="mb-4 flex w-2/3 items-center justify-start md:w-3/4 lg:w-2/3">
           <h1 className="bg-gradient-to-r from-aurora-blue via-aurora-darkblue to-aurora-orangina bg-clip-text text-6xl font-extrabold uppercase tracking-widest text-transparent md:text-7xl lg:text-9xl">
@@ -31,7 +33,7 @@ export default function Hero({
         </div>
         <div className="flex w-2/3 flex-col gap-3 text-2xl font-semibold md:w-3/4 md:text-3xl lg:w-2/3 lg:text-4xl">
           <BlurText
-            text="is here. Enjoy a privacy-respecting, smooth and stable experience on your PC. Imagine that."
+            text={t("tagline")}
             delay={50}
             animateBy="words"
             direction="top"
@@ -44,56 +46,56 @@ export default function Hero({
                 "bg-gradient-to-r from-aurora-blue via-aurora-darkblue to-aurora-orangina bg-clip-text text-transparent"
               }
             >
-              Develop your next app.
+              {t("loop-1")}
             </span>
             <span
               className={
                 "bg-gradient-to-r from-aurora-blue to-aurora-lightorange bg-clip-text text-transparent"
               }
             >
-              Launch a space rocket.
+              {t("loop-2")}
             </span>
             <span
               className={
                 "bg-gradient-to-r from-aurora-blue to-aurora-lightorange bg-clip-text text-transparent"
               }
             >
-              Watch videos.
+              {t("loop-3")}
             </span>
             <span
               className={
                 "bg-gradient-to-r from-aurora-blue to-aurora-darkblue bg-clip-text text-transparent"
               }
             >
-              Draw your next movie poster.
+              {t("loop-4")}
             </span>
             <span
               className={
                 "bg-gradient-to-r from-aurora-blue to-aurora-darkblue bg-clip-text text-transparent"
               }
             >
-              Split a Helium atom.
+              {t("loop-5")}
             </span>
             <span
               className={
                 "bg-gradient-to-r from-aurora-lightred to-aurora-orangina bg-clip-text text-transparent"
               }
             >
-              Dream about the stars.
+              {t("loop-6")}
             </span>
             <span
               className={
                 "bg-gradient-to-r from-aurora-lightred to-aurora-orangina bg-clip-text text-transparent"
               }
             >
-              Play hard, work hard.
+              {t("loop-7")}
             </span>
             <span
               className={
                 "bg-gradient-to-r from-aurora-blue to-aurora-darkblue bg-clip-text text-transparent"
               }
             >
-              Engineer the next spaceship.
+              {t("loop-8")}
             </span>
           </TextLoop>
         </div>
@@ -116,7 +118,7 @@ export default function Hero({
               className="relative inline-flex min-w-[250px] items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-aurora-darkblue to-aurora-blue px-6 py-3 text-lg font-semibold text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-aurora-darkblue/25 active:scale-95"
               onClick={() => router.push("https://docs.getaurora.dev")}
             >
-              Go to the docs
+              {t("go-to-docs")}
               <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </button>

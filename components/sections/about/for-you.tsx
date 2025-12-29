@@ -1,7 +1,12 @@
+"use client";
+
 import SpotlightCard from "@/components/SpotlightCard";
-import { BookHeart, CpuIcon, RotateCw, ScrollText } from "lucide-react";
+import { CpuIcon, RotateCw, ScrollText } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function ForYou() {
+  const t = useTranslations("For-You");
+
   return (
     <div
       className={
@@ -13,10 +18,10 @@ export default function ForYou() {
           "bg-gradient-to-r from-aurora-blue to-aurora-lightorange bg-clip-text text-4xl font-bold text-transparent lg:text-7xl py-2"
         }
       >
-        How does Aurora fit in for you?
+        {t("title")}
       </h1>
       <p className={"text-xl text-center max-w-3xl"}>
-        Here are a few reasons why you should consider using Aurora.
+        {t("subtitle")}
       </p>
       <div className={"grid grid-cols-1 gap-8 lg:grid-cols-3 w-full"}>
         <SpotlightCard
@@ -38,20 +43,18 @@ export default function ForYou() {
                   "bg-gradient-to-r from-aurora-blue to-aurora-darkblue bg-clip-text text-3xl font-semibold text-transparent"
                 }
               >
-                Automatic updates, forever.
+                {t("automatic-updates")}
               </h2>
               <div className={"text-xl leading-relaxed"}>
                 <p className={"mb-4"}>
-                  Aurora downloads and applies updates automatically in the
-                  background. This includes the operating system itself and all installed
-                  applications.
+                  {t("automatic-updates-text")}
                 </p>
                 <p
                   className={
                     "bg-gradient-to-r from-aurora-blue to-aurora-darkblue bg-clip-text text-2xl font-semibold text-transparent"
                   }
                 >
-                  Let us take care of your updates.
+                  {t("automatic-updates-highlight")}
                 </p>
               </div>
             </div>
@@ -72,20 +75,18 @@ export default function ForYou() {
                   "bg-gradient-to-r from-aurora-orangina to-aurora-lightred bg-clip-text text-3xl font-semibold text-transparent"
                 }
               >
-                Expanded hardware support.
+                {t("hardware-support")}
               </h2>
               <div className={"text-xl leading-relaxed"}>
                 <p className={"mb-4"}>
-                  Aurora includes support for all graphics cards and CPUs, including
-                  GPUs from Nvidia. Expanded hardware support extends to game
-                  controllers and more printer drivers.
+                  {t("hardware-support-text")}
                 </p>
                 <p
                   className={
                     "bg-gradient-to-r from-aurora-orangina to-aurora-lightred bg-clip-text text-2xl font-semibold text-transparent"
                   }
                 >
-                  Game on, no problem.
+                  {t("hardware-support-highlight")}
                 </p>
               </div>
             </div>
@@ -106,11 +107,11 @@ export default function ForYou() {
                   "bg-gradient-to-r from-aurora-darkblue to-ublue-lightblue bg-clip-text text-3xl font-semibold text-transparent"
                 }
               >
-                Helping you along the way.
+                {t("helping-you")}
               </h2>
               <div className={"text-xl leading-relaxed"}>
                 <p className={"mb-4"}>
-                  We include scripts and common utilities to help you get started quickly and set up some common pieces of software in an non intrusive way.
+                  {t("helping-you-text")}
                 </p>
                 <p
                   className={

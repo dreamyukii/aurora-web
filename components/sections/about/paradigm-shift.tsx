@@ -1,9 +1,11 @@
+"use client";
+
 import SpotlightCard from "@/components/SpotlightCard";
-import { auroraColors } from "@/lib/aurora-colors";
 import { ArrowUpRight, Cuboid, ShoppingBag, TextSearch } from "lucide-react";
 import useIsMobile from "@/components/sections/about/useIsMobile";
+import { useTranslations } from "next-intl";
 
-function FlathubLink() {
+function FlathubLink({ label }: { label: string }) {
   return (
     <a
       href={"https://flathub.org"}
@@ -13,7 +15,7 @@ function FlathubLink() {
         "flex flex-row justify-between items-center gap-3 rounded-2xl border border-aurora-lightorange p-3 text-lg font-bold text-white hover:bg-aurora-lightorange/10 transition-colors"
       }
     >
-      Checkout Flathub
+      {label}
       <ArrowUpRight size={32} />
     </a>
   );
@@ -21,6 +23,7 @@ function FlathubLink() {
 
 export default function ParadigmShift() {
   const isMobile = useIsMobile();
+  const t = useTranslations("Paradigm-Shift");
 
   return (
     <div
@@ -33,11 +36,10 @@ export default function ParadigmShift() {
           "bg-gradient-to-r from-aurora-blue to-aurora-lightorange bg-clip-text text-4xl font-bold text-transparent lg:text-7xl py-2"
         }
       >
-        Aurora is a paradigm shift for Linux.
+        {t("title")}
       </h1>
       <p className={"text-xl text-center max-w-3xl"}>
-        To rethink the Linux Desktop experience from the ground up, we built
-        Aurora on new technology and principles. What does this mean for you?
+        {t("subtitle")}
       </p>
       <div className={"grid grid-cols-1 gap-8 lg:grid-cols-1 w-full"}>
         <SpotlightCard
@@ -54,27 +56,24 @@ export default function ParadigmShift() {
                   "bg-gradient-to-r from-aurora-blue to-aurora-darkblue bg-clip-text text-3xl font-semibold text-transparent"
                 }
               >
-                Rock-solid.
+                {t("rock-solid")}
               </h2>
               <div className={"text-xl leading-relaxed"}>
                 <p className={"mb-4"}>
-                  We built Aurora on completely different technology and
-                  principles compared to a normal Linux Desktop.
+                  {t("rock-solid-text-1")}
                 </p>
                 <p className={"mb-4"}>
-                  Updates are built and tested before they ever reach you and are
-                  a single image that gets applied in the background.
+                  {t("rock-solid-text-2")}
                 </p>
                 <p className={"mb-4"}>
-                  And if a new version of Aurora breaks something, you can
-                  rollback to a known-good state.
+                  {t("rock-solid-text-3")}
                 </p>
                 <p
                   className={
                     "bg-gradient-to-r from-aurora-blue to-aurora-darkblue bg-clip-text text-2xl font-semibold text-transparent"
                   }
                 >
-                  Image based is the future.
+                  {t("rock-solid-highlight")}
                 </p>
               </div>
             </div>
@@ -96,26 +95,22 @@ export default function ParadigmShift() {
                     "bg-gradient-to-r from-aurora-lightorange to-aurora-orangina bg-clip-text text-3xl font-semibold text-transparent"
                   }
                 >
-                  A unified app store.
+                  {t("app-store")}
                 </h2>
-                {!isMobile && <div className="ml-4"><FlathubLink /></div>}
+                {!isMobile && <div className="ml-4"><FlathubLink label={t("checkout-flathub")} /></div>}
               </div>
               <div className={"text-xl leading-relaxed"}>
                 <p className={"mb-4"}>
-                  Utilizing the power of the Flathub App Store, we have a unified
-                  and one-stop shop for app developers and app users alike. For
-                  the first time, there is a unified app store for the Linux
-                  platform where developers can publish their apps easily and earn
-                  money to support their OSS work.
+                  {t("app-store-text")}
                 </p>
                 <p
                   className={
                     "bg-gradient-to-r from-aurora-lightorange to-aurora-orangina bg-clip-text text-2xl font-semibold text-transparent mb-4"
                   }
                 >
-                  It's the year of the Linux App Store.
+                  {t("app-store-highlight")}
                 </p>
-                {isMobile && <FlathubLink />}
+                {isMobile && <FlathubLink label={t("checkout-flathub")} />}
               </div>
             </div>
           </div>
@@ -135,22 +130,18 @@ export default function ParadigmShift() {
                   "bg-gradient-to-r from-aurora-darkblue/80 to-aurora-blue bg-clip-text text-3xl font-semibold text-transparent"
                 }
               >
-                Easily auditable and extendable.
+                {t("extendable")}
               </h2>
               <div className={"text-xl leading-relaxed"}>
                 <p className={"mb-4"}>
-                  Aurora is nothing more than a collection of bash scripts,
-                  containerfiles and custom programs stitched together. This makes
-                  it easy to audit, contribute and help out. By building a easy
-                  entry-point for developers, we hope to encourage contributions
-                  from new users. Go on this journey with us.
+                  {t("extendable-text")}
                 </p>
                 <p
                   className={
                     "bg-gradient-to-r from-aurora-darkblue to-aurora-blue bg-clip-text text-2xl font-semibold text-transparent"
                   }
                 >
-                  The power of Docker is here for the desktop. Wowza.
+                  {t("extendable-highlight")}
                 </p>
               </div>
             </div>

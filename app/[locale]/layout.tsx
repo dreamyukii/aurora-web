@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
 import { Inter, Poltawski_Nowy } from "next/font/google";
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { DiscourseScript } from "./discourse-script";
-import UmamiScript from "@/umami-script";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
-const geist = Geist({subsets: ["latin"]});
+const geist = Geist({ subsets: ["latin"] });
 const serifFont = Poltawski_Nowy({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Aurora - The Linux-based ultimate workstation",
-  description: "The ultimate productivity workstation, stable and streamlined for you.",
+  description:
+    "The ultimate productivity workstation, stable and streamlined for you.",
   openGraph: {
     type: "website",
-    images: ["/aurora_wallpaper_september_2025.png"]
+    images: ["/aurora_wallpaper_september_2025.png"],
   },
   icons: {
     icon: "/aurora-logo.svg",
@@ -33,9 +33,7 @@ export default async function RootLayout({
   const messages = await getMessages();
   return (
     <html lang={locale}>
-      <head>
-        <UmamiScript />
-      </head>
+      <head></head>
       <body className={geist.className}>
         <DiscourseScript />
         <link rel="icon" href="/favicon.ico" sizes="any" />

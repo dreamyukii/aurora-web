@@ -2,8 +2,20 @@ import { RefObject } from "react";
 import { CircleArrowUp, GithubIcon, GitMerge, GlobeIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-export default function Footer({ introRef }: { introRef: RefObject<any> }) {
+export default function Footer({ introRef }: { introRef?: RefObject<any> }) {
   const t = useTranslations("Footer");
+
+  const handleScrollUp = () => {
+    if (introRef?.current) {
+      introRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <footer
@@ -13,12 +25,7 @@ export default function Footer({ introRef }: { introRef: RefObject<any> }) {
       >
         <button
           className={"mt-5 flex flex-row items-center justify-center gap-5"}
-          onClick={() => {
-            introRef.current.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }}
+          onClick={handleScrollUp}
         >
           <CircleArrowUp className={"h-10 w-10"} />
           {t("go-up")}

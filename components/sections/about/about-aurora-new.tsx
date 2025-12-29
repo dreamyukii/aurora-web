@@ -7,6 +7,7 @@ import ForDevelopers from "@/components/sections/about/for-developers";
 import { RefObject } from "react";
 import DownloadAurora from "@/components/sections/download/download";
 import NewsFromBlog from "@/components/news-new";
+import { StarsBackground } from "@/components/ui/stars-background";
 
 export default function AboutAuroraNew({
   aboutRef,
@@ -18,8 +19,9 @@ export default function AboutAuroraNew({
   newsRef: RefObject<HTMLDivElement>;
 }) {
   return (
-    <main className={"min-h-dvh bg-zinc-950 p-10 text-white"}>
-      <div ref={aboutRef} className={"flex flex-row gap-10"}>
+    <main className={"relative min-h-dvh bg-gray-950 p-10 text-white"}>
+      <StarsBackground starDensity={0.0005} static />
+      <div ref={aboutRef} className={"relative z-10 flex flex-row gap-10"}>
         <div className="flex w-full flex-col items-center justify-center gap-44">
           <YourNewDesktop />
           <ParadigmShift />

@@ -1,7 +1,12 @@
+"use client";
+
 import { ArrowUpRightIcon, BookOpen, PersonStanding, Users } from "lucide-react";
 import SpotlightCard from "@/components/SpotlightCard";
+import { useTranslations } from "next-intl";
 
 export default function AboutDocs() {
+  const t = useTranslations("Docs-Community");
+
   return (
     <div
       className={
@@ -13,12 +18,10 @@ export default function AboutDocs() {
           "bg-gradient-to-r from-aurora-blue to-aurora-lightorange bg-clip-text text-4xl font-bold text-transparent lg:text-7xl py-2"
         }
       >
-        Documentation & Community
+        {t("title")}
       </h1>
       <p className={"text-xl text-center max-w-4xl"}>
-        If you want to consult our documentation, contribute to it or need help /
-        want to hang out in our community, you will find it here. We have forums
-        and a Discord server.
+        {t("subtitle")}
       </p>
       <div
         className={
@@ -37,21 +40,20 @@ export default function AboutDocs() {
                   "bg-gradient-to-r from-aurora-blue to-aurora-darkblue bg-clip-text text-3xl font-semibold text-transparent"
                 }
               >
-                Our documentation
+                {t("docs-title")}
               </h2>
             </div>
 
             <div className={"text-xl leading-relaxed flex-1"}>
               <p className={"mb-6"}>
-                Get help by reading the docs, or contribute to them if you want
-                to improve them.
+                {t("docs-text")}
               </p>
               <p
                 className={
                   "bg-gradient-to-r from-aurora-blue to-aurora-darkblue bg-clip-text text-2xl font-semibold text-transparent mb-6"
                 }
               >
-                Knowledge at your fingertips.
+                {t("docs-highlight")}
               </p>
             </div>
 
@@ -64,7 +66,7 @@ export default function AboutDocs() {
                   "flex flex-row items-center justify-center gap-3 rounded-2xl border border-aurora-blue p-3 text-lg font-bold text-white transition-all duration-300 hover:bg-aurora-blue/10 hover:scale-105"
                 }
               >
-                Contribute to Docs <ArrowUpRightIcon size={24} />
+                {t("contribute-docs")} <ArrowUpRightIcon size={24} />
               </a>
               <a
                 href={"https://docs.getaurora.dev"}
@@ -74,7 +76,7 @@ export default function AboutDocs() {
                   "flex flex-row items-center justify-center gap-3 rounded-2xl border border-aurora-darkblue p-3 text-lg font-bold text-white transition-all duration-300 hover:bg-aurora-darkblue/10 hover:scale-105"
                 }
               >
-                Read Documentation <ArrowUpRightIcon size={24} />
+                {t("read-docs")} <ArrowUpRightIcon size={24} />
               </a>
             </div>
           </div>
@@ -92,22 +94,20 @@ export default function AboutDocs() {
                   "bg-gradient-to-r from-aurora-orangina to-aurora-lightred bg-clip-text text-3xl font-semibold text-transparent"
                 }
               >
-                Community
+                {t("community-title")}
               </h2>
             </div>
 
             <div className={"text-xl leading-relaxed flex-1"}>
               <p className={"mb-6"}>
-                We have forums for you to ask questions and discuss technical topics,
-                or join our Discord server to hang out and chat with fellow Aurora users
-                and developers.
+                {t("community-text")}
               </p>
               <p
                 className={
                   "bg-gradient-to-r from-aurora-orangina to-aurora-lightred bg-clip-text text-2xl font-semibold text-transparent mb-6"
                 }
               >
-                Join the conversation.
+                {t("community-highlight")}
               </p>
             </div>
 
@@ -120,7 +120,7 @@ export default function AboutDocs() {
                   "flex flex-row items-center justify-center gap-3 rounded-2xl border border-aurora-lightred p-3 text-lg font-bold text-white transition-all duration-300 hover:bg-aurora-purple/10 hover:scale-105"
                 }
               >
-                Visit Forums <PersonStanding size={24} />
+                {t("visit-forums")} <PersonStanding size={24} />
               </a>
               <a
                 href={"https://discord.gg/HU3BvDRcRe"}
@@ -130,7 +130,7 @@ export default function AboutDocs() {
                   "flex flex-row items-center justify-center gap-3 rounded-2xl border border-aurora-orangina p-3 text-lg font-bold text-white transition-all duration-300 hover:bg-aurora-orangina/10 hover:scale-105"
                 }
               >
-                Join Discord <ArrowUpRightIcon size={24} />
+                {t("join-discord")} <ArrowUpRightIcon size={24} />
               </a>
             </div>
           </div>

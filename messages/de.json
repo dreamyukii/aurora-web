@@ -53,9 +53,9 @@
     "stargazer": "Hallo Sternengucker, Aurora erwartet dich.",
     "powered": "Angetrieben von der Großartigkeit von KDE und Universal Blue, für dich gemacht.",
     "onboard": "Steig ein in das Raumschiff zu deinem neuen Desktop-Betriebssystem.",
-    "gaze": " Lass uns gemeinsam die Sterne betrachten, Mitreisender.",
+    "gaze": " Lass uns gemeinsam die Sterne betrachten, Sternengucker.",
     "learn-more": "Mehr erfahren",
-    "tagline": "ist da. Genieße ein datenschutzfreundliches, reibungsloses und stabiles Erlebnis auf deinem PC. Stell dir das vor.",
+    "tagline": "ist da. Genieße ein datenschutzfreundliches, stabiles und schnelles Benutzerlebnis auf deinem PC.",
     "go-to-docs": "Zur Dokumentation",
     "loop-1": "Entwickle deine nächste App.",
     "loop-2": "Starte eine Weltraumrakete.",
@@ -68,7 +68,7 @@
   },
   "About-Aurora": {
     "for-end-user": "Aurora für Endbenutzer",
-    "reliable": "Aurora ist das Image für Menschen, die ein zuverlässiges, sicheres und reibungsloses Computing-Erlebnis für alltägliche Aufgaben und darüber hinaus suchen.",
+    "reliable": "Aurora ist für Menschen, die ein zuverlässiges, sicheres und reibungsloses Computing-Erlebnis für alltägliche Aufgaben und darüber hinaus suchen.",
     "simply-delightful": "Einfach bezaubernd.",
     "simply-delightful-text": "Aurora bietet ein leicht angepasstes KDE Plasma für ein super flüssiges und bezauberndes Desktop-Erlebnis, das endlos angepasst werden kann.",
     "simply-delightful-purple": " Du kannst sogar die Taskleiste verschieben.",
@@ -172,8 +172,8 @@
     "homebrew-highlight": "Dev-Tooling war noch nie bequemer."
   },
   "Your-New-Desktop": {
-    "title": "Hey! Das ist dein neuer Desktop.",
-    "subtitle": "Schalte ein und fühle dich sofort zu Hause bei der Nutzung deines Computers, vom ersten Moment an. Entwickle schneller als je zuvor. Erkunde die Galaxie. Schreibe deinen nächsten Roman.",
+    "title": "Das ist dein neuer Desktop.",
+    "subtitle": "Schalte ihn ein und fühle dich sofort zu Hause bei der Nutzung deines Computers, vom ersten Moment an. Entwickle schneller als je zuvor. Erkunde die Galaxie. Schreibe deinen nächsten Roman.",
     "kde-title": "Gebaut mit KDE Plasma.",
     "kde-text": "Aurora ist um die anpassbare und flexible KDE Plasma Desktop-Umgebung herum gebaut, um ein benutzerfreundliches und komfortables Benutzererlebnis zu bieten.",
     "kde-highlight": "Fühle dich vom ersten Tag an zu Hause.",
@@ -189,17 +189,17 @@
     "rock-solid-text-2": "Updates werden gebaut und getestet, bevor sie dich erreichen, und sind ein einzelnes Image, das im Hintergrund angewendet wird.",
     "rock-solid-text-3": "Und wenn eine neue Version von Aurora etwas kaputt macht, kannst du auf einen bekannten guten Zustand zurückrollen.",
     "rock-solid-highlight": "Image-basiert ist die Zukunft.",
-    "app-store": "Ein einheitlicher App Store.",
-    "app-store-text": "Durch die Nutzung der Kraft des Flathub App Stores haben wir einen einheitlichen One-Stop-Shop für App-Entwickler und App-Nutzer gleichermaßen. Zum ersten Mal gibt es einen einheitlichen App Store für die Linux-Plattform, wo Entwickler ihre Apps einfach veröffentlichen und Geld verdienen können, um ihre OSS-Arbeit zu unterstützen.",
-    "app-store-highlight": "Es ist das Jahr des Linux App Stores.",
+    "app-store": "Ein benutzerfreundlicher App-Store.",
+    "app-store-text": "Durch die Nutzung von Flathub haben wir einen einheitlichen One-Stop-Shop für App-Entwickler und App-Nutzer gleichermaßen. Zum ersten Mal gibt es einen einheitlichen App Store für die Linux-Plattform, wo Entwickler ihre Apps einfach veröffentlichen und Geld verdienen können, um ihre OSS-Arbeit zu unterstützen.",
+    "app-store-highlight": "Das Jahr des Linux App-Stores, näher denn ever.",
     "checkout-flathub": "Flathub besuchen",
     "extendable": "Leicht überprüfbar und erweiterbar.",
     "extendable-text": "Aurora ist nichts anderes als eine Sammlung von Bash-Skripten, Containerfiles und benutzerdefinierten Programmen, die zusammengefügt sind. Das macht es einfach zu überprüfen, beizutragen und zu helfen. Durch den Aufbau eines einfachen Einstiegspunkts für Entwickler hoffen wir, Beiträge von neuen Benutzern zu fördern. Gehe diese Reise mit uns.",
-    "extendable-highlight": "Die Kraft von Docker ist hier für den Desktop. Wow."
+    "extendable-highlight": "Die Kraft von Docker für den Desktop. "
   },
   "Contributors": {
     "title": "Von der Community, für die Community.",
-    "subtitle": "Aurora wird von der Community für die Community gebaut und gepflegt. Wir sind leidenschaftlich bei dem, was wir tun.",
+    "subtitle": "Aurora wird von der Community gebaut und gepflegt, für die Community.",
     "error": "Mitwirkende konnten nicht geladen werden. Bitte versuche es später erneut.",
     "view-all": "Alle Mitwirkenden anzeigen"
   },
@@ -269,7 +269,7 @@
   },
   "Art-Page": {
     "title": "Aurora Kunstgalerie",
-    "subtitle": "Entdecke die wunderschönen Kunstwerke, die von unseren talentierten Künstlern für das Aurora-Projekt erstellt wurden.",
+    "subtitle": "Entdecke die Kunst, die von Menschen für Aurora erstellt wurden. Jedes Bild wurde von Künstlern gezeichnet.",
     "by-artist": "von",
     "sponsor-artist": "Diesen Künstler unterstützen",
     "close": "Schließen",

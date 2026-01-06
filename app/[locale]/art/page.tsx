@@ -166,10 +166,13 @@ export default function ArtGalleryPage() {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [showDownloadMenu, setShowDownloadMenu] = useState(false);
 
-  const getArtworksByCategory = (category: Category) =>
-    artData.artworks.filter(
+  const getArtworksByCategory = (category: Category) => {
+    const artworks = artData.artworks.filter(
       (artwork) => artwork.category === category,
     ) as Artwork[];
+    // Show wallpapers in descending order (newest first)
+    return category === "wallpapers" ? artworks.reverse() : artworks;
+  };
 
   const getArtist = (artistKey: string): Artist => {
     return artData.artists[artistKey as keyof typeof artData.artists];
